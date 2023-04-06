@@ -1,0 +1,31 @@
+name: build <lexfcs> adocs 
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: asciidoctor/docker-asciidoctor
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build HTML
+        run: asciidoctor -D docs --backend=html5 -o lexfcs.html lexfcs/lex-search.adoc
+
+      - name: Build PDF
+        run: asciidoctor-pdf -D docs -o lexfcs.pdf lexfcs/lex-search.adoc
+
+      - name: Store results
+        uses: actions/upload-artifact@v3
+        with:
+          name: lexfcs-specs
+          path: docs/*

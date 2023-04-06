@@ -1,0 +1,85 @@
+= CQL ContextSet specification
+:description: CQL ContextSet specification for LexCQL query language.
+
+
+For some examples of CQL ContextSets, see the https://www.loc.gov/standards/sru/cql/contextSets/listOfContextSets.html[list of Context Sets] at the Library of Congress (LoC).
+
+Used identifier: `http://text-plus.org/cql/lexres/1.0/` (__draft__)
+
+Recommended prefix: `lexres`
+
+
+== Indexes
+
+For more information about CQL indexes, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#indexes[here].
+
+
+[width="100%",options="header"]
+|====================
+| Index title | Description  | Details/Open questions
+| `lemma`  | Lemma name  | Support of multiword expressions?
+| `pos` | Part of Speech | Use of https://universaldependencies.org/u/pos/[Universal POS tags]?
+| `def` | Definition |
+| `xr$synonymy`, ... | Semantic relations, analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[types in TEI Lex0] |
+| `sense` | Sense, Entity, ... - URI/ID pointint to unique identifier, e.g. for disambiguation | Any URI allowed? Defined subsets (using prefixes)? Subdivision by type (e.g. synset/sense or entity, ...)?
+|====================
+
+
+== Relations
+
+For more information about CQL relations, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relations[here].
+
+
+=== Implicit Relations
+
+* *`=`* +
+different functions based on index. Full match for `lemma` and `def`, for others (like `pos`) maybe only as _"contained in"_.
+
+
+=== Defined Relations
+
+* (potential definition of full/partial match in the future)
+
+
+== Booleans
+
+For more information about Booleans in CQL, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#booleans[here].
+
+* *`AND`*
+* *`OR`*
+* *`NOT`* (__might be unnecessary__)
+* *`PROX`* (__might be obsolete__)
+
+
+== Relation Modifiers / Relation Qualifiers
+
+For more information about relation modifiers/qualifiers, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relmods[here].
+
+*none*
+
+* *`=`* with `/contains`, `/startswith`, `/endswith`, `/fullmatch`, `/partialmatch` modifiers
+
+
+== Boolean Modifiers
+
+For more information about Boolean modifiers see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#boolmods[here].
+
+*none*
+
+
+== Examples
+
+. `cat`, `"cat"`, `"United Nations"` +
+Searching in the default index; `cql.word` or `lemma`
+
+. `pos = ADJ` +
+Search for adjectives
+
+. `def = "cat"` +
+Search for records whose definition contains the term "cat". +
+TODO: Stemming, Lower/Uppercase, Subword-Matches
+
+. `pos = NOUN AND ( NOT lion ) AND def = carnivore` +
+Search for nouns with "carnivore" in definition; exclusion of records with "lion"
+
+. ...

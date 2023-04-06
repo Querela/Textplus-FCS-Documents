@@ -1,0 +1,53 @@
+= LexCQL
+:description: LexCQL query language.
+
+
+Use of the https://www.loc.gov/standards/sru/cql/[Contextual Query Language (CQL)] for queries on dictionary-like resources in the FCS. As a result, use of an existing, well-known and standardized query language (existing libraries/parsers). Customization & specification of fields for the Text+ case.
+
+Queries should offer the greatest possible compatibility and flexibility, i.e. users can also find other forms (upper/lower case; special characters/umlauts; normalization through dialects) with a simple query. This should make it easier to get started, reduce frustration caused by missing results and also enable a kind of fuzzy search. Endpoints should support this, but may rank better matches of query and result higher (i.e. deliver before other results). However, users should also be given the option of "sharpening" the search using operators/modifiers, so that a result set that may be too large, for example, can be slightly reduced or a specific word form can be searched for at will.
+
+
+== Queryable fields / indexes
+
+
+=== Main fields
+
+Minimum set of information that exists or can be made available by all partners for (almost) all resources.
+
+:fn-lemma: footnote:[Potential use of the https://universaldependencies.org/u/pos/[Universal POS tags]]
+:fn-pos: footnote:[Should be used as default query field]
+
+* `@lemma`: Lemma or article name {fn-lemma}
+* `@pos`: Part of speech {fn-pos}
+* `@def`: Definition
+
+
+=== Semantic relations _(WIP)_
+
+* `@xr$synonymy`: Synonym
+* `@xr$hyponymy`: Hyponym
+* `@xr$hypernymy`: Hyperonym
+* `@xr$meronymy`: Meronym
+* `@xr$antonymy`: Antonym
+(analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[TEI Lex0 types] with `xr` Context Set)
+
+__Open question__: what exactly do search scenarios look like here?
+
+* Example: `pos = "NOUN" AND xr$synonymy = "house"`
+
+
+=== Senses, Entities, Sysnsets _(WIP)_
+
+* `@sense`: References to external sense definitions (like Princeton WordNet, GermaNet, Interlingual Index, authority files)
+
+
+=== Operators _(WIP)_
+
+* Partial or full match of an index
+** `=` for full match?
+*** very generic in  https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html[specification]
+*** Taking into account lower/uppercase? Normalisation of Umlauts?
+*** CQL operators for partial matches or usage of `/approx`?
+*** Regular expressions?
+* Combination with AND / OR and parentheses (...) +
+leave full support to the endpoints!
