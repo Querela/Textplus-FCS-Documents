@@ -1,11 +1,11 @@
-name: build <lexfcs> adocs 
+name: build <fcs-core-2.0> adocs 
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'lexfcs/**'
+      - 'fcs-core-2.0/**'
   workflow_dispatch:
 
 concurrency:
@@ -21,13 +21,16 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build HTML
-        run: asciidoctor -D docs --backend=html5 -o lexfcs.html lexfcs/lex-search.adoc
+        run: asciidoctor -v -D docs -a data-uri --backend=html5 -o fcs-core-2.0.html fcs-core-2.0/index.adoc
 
       - name: Build PDF
-        run: asciidoctor-pdf -D docs -o lexfcs.pdf lexfcs/lex-search.adoc
+        run: asciidoctor-pdf -v -D docs -o fcs-core-2.0.pdf fcs-core-2.0/index.adoc
+
+      - name: Copy attachments
+        run: cp -R fcs-core-2.0/attachments docs/
 
       - name: Store results
         uses: actions/upload-artifact@v3
         with:
-          name: lexfcs-specs
+          name: fcs-core-2.0-specs
           path: docs/*
