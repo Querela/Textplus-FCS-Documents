@@ -2,17 +2,17 @@
 :description: FCS DataViews for Lex Search.
 
 
-Data formats for result representation
+Data formats for result representation.
 
 
-== Extension of the Hits DataView for LexFCS
+== Extension of the Hits Data View for LexFCS
 
 Based on:
 
-* https://office.clarin.eu/v/CE-2017-1046-FCS-Specification-v89.pdf ("Basic Search", §2.2.3.2)
-* https://github.com/clarin-eric/fcs-misc/blob/main/schema/Core_2/DataView-Hits.xsd[Hits XML schema]
+* https://office.clarin.eu/v/CE-2017-1046-FCS-Specification-v89.pdf[FCS Core 2.0 specification] (section "Basic Search", §2.2.3.2)
+* Hits XML schema https://github.com/clarin-eric/fcs-misc/blob/main/schema/Core_2/DataView-Hits.xsd["DataView-Hits.xsd"]
 
-.Example of basic *Hits* DataView
+.Example of basic *Hits* Data View
 [source,xml]
 ----
 <!-- potential @pid and @ref attributes omitted -->
@@ -22,17 +22,20 @@ Based on:
 </fcs:DataView>
 ----
 
-Reuse of the `<hits:Hit>`  element, with the extension of content hinting by using an optional attribute `@kind` with the following allowed values:
+Reuse of the `<hits:Hit>` element, with the extension of content hinting by using an optional attribute `@kind` with the following allowed values:
 
-* `lex-lemma`: Lemma
-* `lex-pos`: Part of speech
-* `lex-def`: Definition
-* Textual content outside of `<hits:Hit>` are displayed unchanged
+* `lex-lemma`: Lemma,
+* `lex-pos`: Part of speech,
+* `lex-def`: Definition.
 
-.Example of extended *Hits* DataView with additional `@kind` attributes
+Textual content outside of `<hits:Hit>` are displayed unchanged.
+
+.Example of extended *Hits* DataV iew with additional `@kind` attributes
 [source,xml]
 ----
 <fcs:DataView type="application/x-textplus-fcs-hits+xml">
   <hits:Result xmlns:hits="http://textplus.org/fcs/dataview/hits"><hits:Hit kind="lex-lemma">Apple</hits:Hit>: <hits:Hit kind="lex-pos">NOUN</hits:Hit>. <hits:Hit kind="lex-def">An apple is an edible fruit produced by an apple tree.</hits:Hit></hits:Result>
 </fcs:DataView>
 ----
+
+Endpoints `MUST` generate responses that are valid according to the XML schema link:attachments/DataView-LexHits.xsd["DataView-LexHits.xsd"].

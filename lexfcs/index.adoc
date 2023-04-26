@@ -1,0 +1,42 @@
+= Specification Lexical Search (v0.1)
+Erik Körner <koerner@saw-leipzig.de>; Thomas Eckart <eckart@saw-leipzig.de>
+v0.1, 2023-04-26
+// more metadata
+:description: 
+:organization: Text+
+// settings
+:doctype: book
+// source code
+:source-highlighter: rouge
+:rouge-style: igor_pro
+// toc and heading
+:toc:
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 4
+// directory stuff
+:imagesdir: images
+// pdf
+ifdef::backend-pdf[]
+:pdf-theme: textplus
+:pdf-themesdir: {docdir}/themes
+:title-logo-image: image:{docdir}/themes/textplus-logo.svg[pdfwidth=3.25in,align=center]
+endif::[]
+
+//ifdef::backend-pdf[]
+//[%notitle]
+//--
+//[abstract]
+//{description}
+//--
+//endif::[]
+
+<<<
+
+include::lexcql.adoc[leveloffset=+1]
+
+include::cql-contextset.adoc[leveloffset=+1]
+
+<<<
+
+include::dataviews.adoc[leveloffset=+1]

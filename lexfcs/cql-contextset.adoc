@@ -2,48 +2,71 @@
 :description: CQL ContextSet specification for LexCQL query language.
 
 
-For some examples of CQL ContextSets, see the https://www.loc.gov/standards/sru/cql/contextSets/listOfContextSets.html[list of Context Sets] at the Library of Congress (LoC).
-
 Used identifier: `http://text-plus.org/cql/lexres/1.0/` (__draft__)
 
 Recommended prefix: `lexres`
 
+TIP: For more examples of CQL ContextSets, see the https://www.loc.gov/standards/sru/cql/contextSets/listOfContextSets.html[list of Context Sets] at the Library of Congress (LoC).
+
 
 == Indexes
 
-For more information about CQL indexes, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#indexes[here].
+TIP: For more information about CQL indexes, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#indexes[here].
 
 
-[width="100%",options="header"]
-|====================
-| Index title | Description  | Details/Open questions
-| `lemma`  | Lemma name  | Support of multiword expressions?
-| `pos` | Part of Speech | Use of https://universaldependencies.org/u/pos/[Universal POS tags]?
-| `def` | Definition |
-| `xr$synonymy`, ... | Semantic relations, analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[types in TEI Lex0] |
-| `sense` | Sense, Entity, ... - URI/ID pointint to unique identifier, e.g. for disambiguation | Any URI allowed? Defined subsets (using prefixes)? Subdivision by type (e.g. synset/sense or entity, ...)?
-|====================
+[%header,width="100%",cols="1,2,2"]
+|===
+| Index title
+| Description
+| Details/Open questions
+
+| `lemma`
+| Lemma name
+| Support of multiword expressions?
+
+| `pos`
+| Part of Speech
+| Use of https://universaldependencies.org/u/pos/[Universal POS tags]?
+
+| `def`
+| Definition
+|
+
+| `xr$synonymy`, ...
+| Semantic relations, analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[types in TEI Lex0]
+|
+
+| `senseRef`
+| Sense, Entity, ... - URI/ID pointint to unique identifier, e.g. for disambiguation | Any URI allowed? Defined subsets (using prefixes)? Subdivision by type (e.g. synset/sense or entity, ...)?
+|===
 
 
 == Relations
 
-For more information about CQL relations, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relations[here].
+TIP: More information about CQL relations can be found https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relations[here].
 
 
 === Implicit Relations
 
-* *`=`* +
-different functions based on index. Full match for `lemma` and `def`, for others (like `pos`) maybe only as _"contained in"_.
+* *`=`*
++
+Different functions based on index.
+Suggested use:
++
+--
+  * _Full match_ for `lemma` and `def`,
+  * for other indexes (like `pos`) use as _"contained in"_ (_Endpoint-dependent behaviour_).
+--
 
 
 === Defined Relations
 
-* (potential definition of full/partial match in the future)
+(potential definition of full/partial match in the future)
 
 
 == Booleans
 
-For more information about Booleans in CQL, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#booleans[here].
+TIP: For more information about Booleans in CQL, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#booleans[here].
 
 * *`AND`*
 * *`OR`*
@@ -53,7 +76,7 @@ For more information about Booleans in CQL, see https://www.loc.gov/standards/sr
 
 == Relation Modifiers / Relation Qualifiers
 
-For more information about relation modifiers/qualifiers, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relmods[here].
+TIP: For more information about relation modifiers/qualifiers, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relmods[here].
 
 *none*
 
@@ -62,7 +85,7 @@ For more information about relation modifiers/qualifiers, see https://www.loc.go
 
 == Boolean Modifiers
 
-For more information about Boolean modifiers see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#boolmods[here].
+TIP: More information about Boolean modifiers can be found https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#boolmods[here].
 
 *none*
 
@@ -81,5 +104,3 @@ TODO: Stemming, Lower/Uppercase, Subword-Matches
 
 . `pos = NOUN AND ( NOT lion ) AND def = carnivore` +
 Search for nouns with "carnivore" in definition; exclusion of records with "lion"
-
-. ...

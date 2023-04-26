@@ -24,30 +24,57 @@ Minimum set of information that exists or can be made available by all partners 
 
 === Semantic relations _(WIP)_
 
+NOTE: Analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[TEI Lex0 types] with `xr` Context Set.
+
 * `@xr$synonymy`: Synonym
 * `@xr$hyponymy`: Hyponym
 * `@xr$hypernymy`: Hyperonym
 * `@xr$meronymy`: Meronym
 * `@xr$antonymy`: Antonym
-(analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[TEI Lex0 types] with `xr` Context Set)
 
-__Open question__: what exactly do search scenarios look like here?
+NOTE: __Open question__: how exactly do search scenarios look like here?
 
-* Example: `pos = "NOUN" AND xr$synonymy = "house"`
+[discrete]
+==== Examples
+
+* `pos = "NOUN" AND xr$synonymy = "house"`
++
+Searching for NOUNs that are synonyms to "house".
 
 
 === Senses, Entities, Sysnsets _(WIP)_
 
-* `@sense`: References to external sense definitions (like Princeton WordNet, GermaNet, Interlingual Index, authority files)
+* `@senseRef`: References to external sense definitions (like Princeton WordNet, GermaNet, Interlingual Index, authority files)
+
+
+[discrete]
+==== Examples
+
+* `senseRef = "https://d-nb.info/gnd/118571249"`
++
+Searching for all references of the entity https://d-nb.info/gnd/118571249 (person "Gottfried Wilhelm Leibniz").
+
+* `senseRef = "wordnet:study%2:31:02::"`
++
+Searching for sense "study" (http://wordnetweb.princeton.edu/perl/webwn?c=6&sub=Change&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=1&o3=&o4=&i=12&h=010000000000100000000&s=study[`study%2:31:02::`, _analyze, analyse, study, examine, canvass_]) using a custom prefix `wordnet:` to identify the type of sense.
++
+NOTE: Some inventory of authorities or lookups should be defined and agreed on. Otherwise, it is up to the Endpoint to interpret the senses correctly.
 
 
 === Operators _(WIP)_
 
-* Partial or full match of an index
-** `=` for full match?
-*** very generic in  https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html[specification]
-*** Taking into account lower/uppercase? Normalisation of Umlauts?
+* Partial or full match of an _index_
+
+** *`=`* for full match?
++
+NOTE: Very generic definition in  https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html[CQL specification].
++
+_Open questions_:
+
+*** Taking into account lower/uppercase normalisation of Umlauts?
 *** CQL operators for partial matches or usage of `/approx`?
 *** Regular expressions?
-* Combination with AND / OR and parentheses (...) +
-leave full support to the endpoints!
+
+* Combination with `AND` / `OR` and parentheses `(` ... `)`
++
+NOTE: Leave full support to the endpoints!
