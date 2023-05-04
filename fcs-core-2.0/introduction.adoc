@@ -131,11 +131,11 @@ SRU::
     SRU Version 1.2: SRU Diagnostics List, Library of Congress,
     http://www.loc.gov/standards/sru/diagnostics/diagnosticsList.html
 
-UD-POS::
+[[ref:UD-POS]]UD-POS::
     Universal Dependencies, Universal POS tags v2.0,
     https://universaldependencies.github.io/u/pos/index.html
 
-SAMPA::
+[[ref:SAMPA]]SAMPA::
     Dafydd Gibbon, Inge Mertins, Roger Moore (Eds.): Handbook of Multimodal and Spoken Language Systems. Resources, Terminology and Product Evaluation, Kluwer Academic Publishers, Boston MA, 2000, ISBN 0-7923-7904-7
 
 [[ref:CLARIN-FCS-DataViews]]CLARIN-FCS-DataViews::

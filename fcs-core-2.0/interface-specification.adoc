@@ -189,7 +189,7 @@ Each Layer is assumed to be _segmented_, e.g. to allow for searching for a singl
 
 |pos
 |Part-of-Speech annotations
-|Universal POS tags
+|<<ref:UD-POS,Universal POS>> tags
 |"NOUN", "VERB", "ADJ"
 
 |orth
@@ -204,7 +204,7 @@ Each Layer is assumed to be _segmented_, e.g. to allow for searching for a singl
 
 |phonetic
 |Phonetic transcription
-|SAMPA
+|<<ref:SAMPA,SAMPA>>
 |"'du:", "'vi:-d6 'ha:-b@n" 
 |===
 
