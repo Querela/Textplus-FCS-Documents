@@ -11,7 +11,7 @@ TIP: For more examples of CQL ContextSets, see the https://www.loc.gov/standards
 
 == Indexes
 
-TIP: For more information about CQL indexes, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#indexes[here].
+TIP: For more information about CQL indexes, see <<ref:LOC-CQLCS,The CQL Context Set, section "INDEXES">>.
 
 
 [%header,width="100%",cols="1,2,2"]
@@ -26,7 +26,7 @@ TIP: For more information about CQL indexes, see https://www.loc.gov/standards/s
 
 | `pos`
 | Part of Speech
-| Use of https://universaldependencies.org/u/pos/[Universal POS tags]?
+| Use of <<ref:UD-POS,Universal POS tags>>. Allow custom tag sets?
 
 | `def`
 | Definition
@@ -43,7 +43,7 @@ TIP: For more information about CQL indexes, see https://www.loc.gov/standards/s
 
 == Relations
 
-TIP: More information about CQL relations can be found https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relations[here].
+TIP: More information about CQL relations can be found <<ref:LOC-CQLCS,The CQL Context Set, section "RELATIONS">>.
 
 
 === Implicit Relations
@@ -66,7 +66,7 @@ Suggested use:
 
 == Booleans
 
-TIP: For more information about Booleans in CQL, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#booleans[here].
+TIP: For more information about Booleans in CQL, see <<ref:LOC-CQLCS,The CQL Context Set, section "BOOLEANS">>.
 
 * *`AND`*
 * *`OR`*
@@ -76,7 +76,7 @@ TIP: For more information about Booleans in CQL, see https://www.loc.gov/standar
 
 == Relation Modifiers / Relation Qualifiers
 
-TIP: For more information about relation modifiers/qualifiers, see https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#relmods[here].
+TIP: For more information about relation modifiers/qualifiers, see <<ref:LOC-CQLCS,The CQL Context Set, section "RELATION MODIFIERS">>.
 
 *none*
 
@@ -85,7 +85,7 @@ TIP: For more information about relation modifiers/qualifiers, see https://www.l
 
 == Boolean Modifiers
 
-TIP: More information about Boolean modifiers can be found https://www.loc.gov/standards/sru/cql/contextSets/theCqlContextSet.html#boolmods[here].
+TIP: More information about Boolean modifiers can be found <<ref:LOC-CQLCS,The CQL Context Set, section "BOOLEAN MODIFIERS">>.
 
 *none*
 

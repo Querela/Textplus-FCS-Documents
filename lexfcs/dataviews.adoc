@@ -9,7 +9,7 @@ Data formats for result representation.
 
 Based on:
 
-* https://office.clarin.eu/v/CE-2017-1046-FCS-Specification-v89.pdf[FCS Core 2.0 specification] (section "Basic Search", §2.2.3.2)
+* <<ref:CLARIN-FCS20Core,FCS Core 2.0 specification>> (section "Basic Search", §2.2.3.2)
 * Hits XML schema https://github.com/clarin-eric/fcs-misc/blob/main/schema/Core_2/DataView-Hits.xsd["DataView-Hits.xsd"]
 
 .Example of basic *Hits* Data View
@@ -17,8 +17,7 @@ Based on:
 ----
 <!-- potential @pid and @ref attributes omitted -->
 <fcs:DataView type="application/x-clarin-fcs-hits+xml">
-  <hits:Result xmlns:hits="http://clarin.eu/fcs/dataview/hits">The quick brown <hits:Hit>fox</hits:Hit> jumps over the lazy<hits:Hit>dog</hits:Hit>.
-  </hits:Result>
+  <hits:Result xmlns:hits="http://clarin.eu/fcs/dataview/hits">The quick brown <hits:Hit>fox</hits:Hit> jumps over the lazy<hits:Hit>dog</hits:Hit>.</hits:Result>
 </fcs:DataView>
 ----
 
