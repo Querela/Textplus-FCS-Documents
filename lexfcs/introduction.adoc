@@ -1,7 +1,7 @@
 = Introduction
 :description: Introduction of LexFCS.
 
-The goal of the _Lexical Search for Federated Content Search (LexFCS)_ specification is to introduce an extension of the <<ref:CLARIN-FCS20Core,_CLARIN Federated Content Search (CLARIN-FCS) - Core 2.0_>> specification that allows search and retrieval of _lexical resources_ like dictionaries, encyclopedias, normative data, terminological databases, ontologies etc.
+The _Lexical Search for Federated Content Search (LexFCS)_ specification is an extension of the <<ref:CLARIN-FCS20Core,_CLARIN Federated Content Search (CLARIN-FCS) - Core 2.0_>> specification that allows search and retrieval of _lexical resources_ including dictionaries, encyclopedias, normative data, terminological databases, ontologies etc.
 
 
 == Terminology
@@ -127,7 +127,7 @@ NOTE: Based on _Normative References_ in <<ref:CLARIN-FCS20Core,FCS Core 2.0>> s
 
 == Typographic and XML Namespace conventions
 
-Sections that are still in discussion and not yet finalized will be marked with `(WIP)` and may optionally have some _NOTE_ admonition blocks. Details and specifications `MUST NOT` be considered stable.
+Sections that are still in discussion and not yet finalized are marked with `(WIP)` and may optionally have some _NOTE_ admonition blocks. Details and specifications `MUST NOT` be considered stable.
 
 The following typographic conventions for XML fragments will be used throughout this specification:
 

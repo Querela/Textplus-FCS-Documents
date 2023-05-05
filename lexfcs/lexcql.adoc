@@ -1,30 +1,37 @@
 = LexCQL
 :description: LexCQL query language.
 
+The LexCQL makes use of the <<ref:LOC-CQL,Contextual Query Language (CQL)>> for queries on lexical resources in the context of the FCS. This has the benefit of using an existing, well-known and standardized query language with an established ecosystem, including libraries, parsers and extensive documentation.
 
-Use of the <<ref:LOC-CQL,Contextual Query Language (CQL)>> for queries on dictionary-like resources in the FCS. As a result, use of an existing, well-known and standardized query language (existing libraries/parsers). Customization & specification of fields for the Text+ case.
+LexCQL queries should offer the greatest possible compatibility and flexibility to users, i.e. it should allow the retrieval of lexical records which are available in different spelling or normalisation variants (upper/lower case; diacritics/umlauts; other forms of normalization) with a simple query. It therefore `SHOULD` make it easier to formulate meaningful queries, reduce frustration caused by missing or incomplete results and also enable fuzzy search functionality. Endpoints should support this flexible, user-oriented handling, but are always free to rank more suitable results higher.
 
-Queries should offer the greatest possible compatibility and flexibility, i.e. users can also find other forms (upper/lower case; special characters/umlauts; normalization through dialects) with a simple query. This should make it easier to get started, reduce frustration caused by missing results and also enable a kind of fuzzy search. Endpoints should support this, but may rank better matches of query and result higher (i.e. deliver before other results). However, users should also be given the option of "sharpening" the search using operators/modifiers, so that a result set that may be too large, for example, can be slightly reduced or a specific word form can be searched for at will.
+However, users should also be given the option of "sharpening" search queries using optional operators or modifiers, to refine queries and the associated result sets.
 
 
 == Queryable fields / indexes
+Every LexCQL Endpoint must support queries for field 'lemma' (at least implicitly as default field) and should support as many queryable fields as feasible.
 
+:fn-lemma: footnote:[Should be used as default query field]
+:fn-pos: footnote:[Potential use of the <<ref:UD-POS,Universal Dependencies POS tags>>]
 
-=== Main fields
+=== Form and sense definition
 
-Minimum set of information that exists or can be made available by all partners for (almost) all resources.
+* `lemma`: Lemma, main form, article name {fn-lemma}
 
-:fn-lemma: footnote:[Potential use of the <<ref:UD-POS,Universal POS tags>>]
-:fn-pos: footnote:[Should be used as default query field]
-
-* `lemma`: Lemma or article name {fn-lemma}
-* `pos`: Part of speech {fn-pos}
 * `def`: Definition
 
+=== Grammatical properties (WIP)
 
-=== Semantic relations _(WIP)_
+NOTE: Analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#typology-of-gram[TEI Lex-0 types] .
 
-NOTE: Analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[TEI Lex0 types] with `xr` Context Set.
+* `pos`: Part of speech {fn-pos}
+
+NOTE: __Open question__: all TEI Lex-0 vocabulary (like case, gender, etc.)?
+
+
+=== Semantic relations / Cross-references _(WIP)_
+
+NOTE: Analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[TEI Lex-0 types] with `xr` Context Set.
 
 * `xr$synonymy`: Synonym
 * `xr$hyponymy`: Hyponym
@@ -39,10 +46,10 @@ NOTE: __Open question__: how exactly do search scenarios look like here?
 
 * `pos = "NOUN" AND xr$synonymy = "house"`
 +
-Searching for NOUNs that are synonyms to "house".
+Searching for nouns that are synonyms to "house".
 
 
-=== Senses, Entities, Sysnsets _(WIP)_
+=== Senses, Entities, Synsets _(WIP)_
 
 * `senseRef`: References to external sense definitions (like Princeton WordNet, GermaNet, Interlingual Index, authority files)
 
@@ -56,9 +63,13 @@ Searching for all references of the entity https://d-nb.info/gnd/118571249 (pers
 
 * `senseRef = "wordnet:study%2:31:02::"`
 +
-Searching for sense "study" (http://wordnetweb.princeton.edu/perl/webwn?c=6&sub=Change&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=1&o3=&o4=&i=12&h=010000000000100000000&s=study[`study%2:31:02::`, _analyze, analyse, study, examine, canvass_]) using a custom prefix `wordnet:` to identify the type of sense.
+Searching for sense "study" (http://wordnetweb.princeton.edu/perl/webwn?c=6&sub=Change&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=1&o3=&o4=&i=12&h=010000000000100000000&s=study[`study%2:31:02::`, _analyze, analyse, study, examine, canvass_]).
 +
 NOTE: Some inventory of authorities or lookups should be defined and agreed on. Otherwise, it is up to the Endpoint to interpret the senses correctly.
+
+_Open questions_:
+
+ *** Standard way of referencing Princeton WordNet senses?
 
 
 === Operators _(WIP)_
