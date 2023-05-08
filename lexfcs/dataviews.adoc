@@ -1,4 +1,4 @@
-= LexFCS DataViews
+= LexFCS Data Views
 :description: FCS DataViews for Lex Search.
 
 
@@ -29,7 +29,7 @@ Reuse of the `<hits:Hit>` element, with the extension of content hinting by usin
 
 Textual content outside of `<hits:Hit>` are displayed unchanged.
 
-.Example of extended *Hits* DataV iew with additional `@kind` attributes
+.Example of extended *Hits* Data View with additional `@kind` attributes
 [source,xml]
 ----
 <fcs:DataView type="application/x-textplus-fcs-hits+xml">

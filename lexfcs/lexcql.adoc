@@ -1,17 +1,17 @@
 = LexCQL
 :description: LexCQL query language.
 
-The LexCQL makes use of the <<ref:LOC-CQL,Contextual Query Language (CQL)>> for queries on lexical resources in the context of the FCS. This has the benefit of using an existing, well-known and standardized query language with an established ecosystem, including libraries, parsers and extensive documentation.
+The LexCQL makes use of the <<ref:LOC-CQL,Contextual Query Language (CQL)>> for queries on lexical resources in the context of the FCS. This has the benefit of using an existing, well-known and standardized query language with an established ecosystem, including libraries, parsers and extensive documentation. The proposed Context Set can be found in section <<CQL ContextSet specification>>.
 
-LexCQL queries should offer the greatest possible compatibility and flexibility to users, i.e. it should allow the retrieval of lexical records which are available in different spelling or normalisation variants (upper/lower case; diacritics/umlauts; other forms of normalization) with a simple query. It therefore `SHOULD` make it easier to formulate meaningful queries, reduce frustration caused by missing or incomplete results and also enable fuzzy search functionality. Endpoints should support this flexible, user-oriented handling, but are always free to rank more suitable results higher.
+LexCQL queries should offer the greatest possible compatibility and flexibility to users, i.e. it `SHOULD` allow the retrieval of lexical records which are available in different spelling or normalisation variants (upper/lower case; diacritics/umlauts; other forms of normalization) with a simple query. It therefore should make it easier to formulate meaningful queries, reduce frustration caused by missing or incomplete results and also enable fuzzy search functionality. Endpoints `SHOULD` support this flexible, user-oriented handling, but are always free to rank more suitable results higher.
 
-However, users should also be given the option of "sharpening" search queries using optional operators or modifiers, to refine queries and the associated result sets.
+However, users `SHOULD` also be given the option of _"sharpening"_ search queries using optional operators or modifiers, to refine queries and the associated result sets.
 
 
 == Queryable fields / indexes
-Every LexCQL Endpoint must support queries for field 'lemma' (at least implicitly as default field) and should support as many queryable fields as feasible.
+Every LexCQL Endpoint `MUST` support queries for field `lemma` (at least implicitly as default field) and `SHOULD` support as many queryable fields as feasible.
 
-:fn-lemma: footnote:[Should be used as default query field]
+:fn-lemma: pass:n[footnote:[`SHOULD` be used as default query field]]
 :fn-pos: footnote:[Potential use of the <<ref:UD-POS,Universal Dependencies POS tags>>]
 
 === Form and sense definition

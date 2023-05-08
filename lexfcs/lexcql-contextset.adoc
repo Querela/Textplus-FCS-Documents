@@ -34,7 +34,7 @@ TIP: For more information about CQL indexes, see <<ref:LOC-CQLCS,The CQL Context
 
 | `xr$synonymy`, ...
 | Semantic relations, analogous to https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#crossref_typology[types in TEI Lex0]
-|
+| Only _Synonym_, _Hyponym_, _Hyperonym_, _Meronym_, _Antonym_, or additional relations?
 
 | `senseRef`
 | Sense, Entity, ... - URI/ID pointint to unique identifier, e.g. for disambiguation | Any URI allowed? Defined subsets (using prefixes)? Subdivision by type (e.g. synset/sense or entity, ...)?
