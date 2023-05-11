@@ -27,7 +27,7 @@ jobs:
         run: asciidoctor-pdf -v -D docs -o lexfcs.pdf lexfcs/index.adoc
 
       - name: Copy attachments
-        run: cp -R fcs-core-2.0/attachments docs/
+        run: cp -R lexfcs/attachments docs/
 
       - name: Store results
         uses: actions/upload-artifact@v3
