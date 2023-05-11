@@ -2,7 +2,7 @@
 :description: CQL ContextSet specification for LexCQL query language.
 
 
-Used identifier: `http://text-plus.org/cql/lexres/1.0/` (__draft__)
+Used identifier: `\http://text-plus.org/cql/lexres/1.0/` (__draft__)
 
 Recommended prefix: `lexres`
 
