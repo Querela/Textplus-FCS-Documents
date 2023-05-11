@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'lexfcs/**'
+      - '.github/workflows/build-lexfcs-adoc.yml'
   workflow_dispatch:
 
 concurrency:

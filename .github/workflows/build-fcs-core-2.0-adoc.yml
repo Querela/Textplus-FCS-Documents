@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'fcs-core-2.0/**'
+      - '.github/workflows/build-fcs-core-2.0-adoc.yml'
   workflow_dispatch:
 
 concurrency:

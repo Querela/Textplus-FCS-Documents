@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'fcs-dataviews-1.0/**'
+      - '.github/workflows/build-fcs-dataviews-adoc.yml'
   workflow_dispatch:
 
 concurrency:
