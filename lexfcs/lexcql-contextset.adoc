@@ -102,5 +102,5 @@ Search for adjectives
 Search for records whose definition contains the term "cat". +
 TODO: Stemming, Lower/Uppercase, Subword-Matches
 
-. `pos = NOUN AND ( NOT lion ) AND def = carnivore` +
+. `pos = NOUN NOT lion AND def = carnivore` +
 Search for nouns with "carnivore" in definition; exclusion of records with "lion"
