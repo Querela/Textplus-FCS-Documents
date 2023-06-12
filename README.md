@@ -6,10 +6,7 @@
 
 ## CLARIN
 
-* [CLARIN Federated Content Search (CLARIN-FCS) - Core 2.0 `fcs-core-2.0/index.adoc`](fcs-core-2.0/index.adoc)
-* [CLARIN Federated Content Search (CLARIN-FCS) - Core 1.0 `fcs-core-1.0/index.adoc`](fcs-core-1.0/index.adoc)
-* [CLARIN Federated Content Search (CLARIN-FCS) - Data Views 1.0 `fcs-dataviews-1.0/index.adoc`](fcs-dataviews-1.0/index.adoc)
-* [CLARIN Federated Content Search (CLARIN-FCS) - AAI 1.0 `fcs-aai/index.adoc`](fcs-aai/index.adoc)
+Moved to https://github.com/clarin-eric/fcs-misc/
 
 ## ASCIIDoc
 
@@ -30,8 +27,8 @@ You can build the specifications documents yourself with:
 
 ```bash
 # Set spec you want to build
-# Based on folder names, choose one of: fcs-core-1.0, fcs-core-2.0, fcs-aai, fcs-dataviews-1.0, lexfcs
-NAME=fcs-core-2.0
+# Based on folder names, choose one of: lexfcs
+NAME=lexfcs
 
 # Output will be in `docs/`
 
